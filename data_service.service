@@ -1,0 +1,16 @@
+[Unit]
+Description=EDP Service
+After=network.target
+
+[Service]
+Type=simple
+User=root
+ExecStart=/bin/bash path/to/your/run_scripts.sh
+Restart=always
+RestartSec=5s
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=run_edp_scripts
+
+[Install]
+WantedBy=multi-user.target
